@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PageInfoService } from './components/services/page-info.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor( public _pageInfoService: PageInfoService){
+
+  }
   title = 'papaya';
 }
