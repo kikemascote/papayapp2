@@ -33,14 +33,28 @@ let ProductosService = class ProductosService {
     buscarProducto(termino) {
         if (this.productos.length === 0) {
             // cargar productos
+            this.cargarProductos().then(() => {
+                // callback ejecutar despues de tener los productos
+                // aplicar filtro
+                this.filtrarProductos(termino);
+            });
         }
         else {
             // aplicar filtro
+            this.filtrarProductos(termino);
         }
-        this.productosFiltrado = this.productos.filter(producto => {
-            return true;
+        // console.log( this.productosFiltrado );
+    }
+    filtrarProductos(termino) {
+        // console.log( this.productos );
+        this.productosFiltrado = [];
+        termino = termino.toLowerCase();
+        this.productos.forEach(prod => {
+            const tituloLower = prod.titulo.toLowerCase();
+            if (prod.categoria.indexOf(termino) >= 0 || tituloLower.indexOf(termino) >= 0) {
+                this.productosFiltrado.push(prod);
+            }
         });
-        console.log(this.productosFiltrado);
     }
 };
 ProductosService = __decorate([
