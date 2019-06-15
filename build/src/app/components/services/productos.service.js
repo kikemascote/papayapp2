@@ -12,19 +12,35 @@ let ProductosService = class ProductosService {
         this.http = http;
         this.cargando = true;
         this.productos = [];
+        this.productosFiltrado = [];
         this.cargarProductos();
     }
     cargarProductos() {
-        this.http.get('https://papaya-db.firebaseio.com/productos_idx.json')
-            .subscribe((resp) => {
-            console.log(resp);
-            this.productos = resp;
-            this.cargando = false;
-            // setTimeout
+        return new Promise((resolve, reject) => {
+            this.http.get('https://papaya-db.firebaseio.com/productos_idx.json')
+                .subscribe((resp) => {
+                // console.log(resp);
+                this.productos = resp;
+                this.cargando = false;
+                resolve();
+                // setTimeout
+            });
         });
     }
     getProducto(id) {
         return this.http.get(`https://papaya-db.firebaseio.com/productos/${id}.json`);
+    }
+    buscarProducto(termino) {
+        if (this.productos.length === 0) {
+            // cargar productos
+        }
+        else {
+            // aplicar filtro
+        }
+        this.productosFiltrado = this.productos.filter(producto => {
+            return true;
+        });
+        console.log(this.productosFiltrado);
     }
 };
 ProductosService = __decorate([

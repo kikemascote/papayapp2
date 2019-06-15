@@ -16,6 +16,7 @@ const items_component_1 = require("./components/pages/items/items.component");
 const about_component_1 = require("./components/pages/about/about.component");
 const item_detail_component_1 = require("./components/pages/item-detail/item-detail.component");
 const http_1 = require("@angular/common/http");
+const search_component_1 = require("./components/pages/search/search.component");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -26,7 +27,8 @@ AppModule = __decorate([
             footer_component_1.FooterComponent,
             items_component_1.ItemsComponent,
             about_component_1.AboutComponent,
-            item_detail_component_1.ItemDetailComponent
+            item_detail_component_1.ItemDetailComponent,
+            search_component_1.SearchComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,

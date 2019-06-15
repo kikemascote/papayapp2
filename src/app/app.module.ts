@@ -9,6 +9,7 @@ import { ItemsComponent } from './components/pages/items/items.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { ItemDetailComponent } from './components/pages/item-detail/item-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './components/pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ItemsComponent,
     AboutComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

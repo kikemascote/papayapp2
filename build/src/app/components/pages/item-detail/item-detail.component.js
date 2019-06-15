@@ -19,7 +19,7 @@ let ItemDetailComponent = class ItemDetailComponent {
             this.productoService.getProducto(parametros['id'])
                 .subscribe((producto) => {
                 this.pid = parametros['id'];
-                console.log(producto);
+                // console.log(producto);
                 this.producto = producto;
             });
         });

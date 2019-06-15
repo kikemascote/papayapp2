@@ -11,9 +11,11 @@ const router_1 = require("@angular/router");
 const items_component_1 = require("./components/pages/items/items.component");
 const about_component_1 = require("./components/pages/about/about.component");
 const item_detail_component_1 = require("./components/pages/item-detail/item-detail.component");
+const search_component_1 = require("./components/pages/search/search.component");
 const routes = [
     { path: 'home', component: items_component_1.ItemsComponent },
     { path: 'about', component: about_component_1.AboutComponent },
+    { path: 'search/:termino', component: search_component_1.SearchComponent },
     { path: 'item-detail/:id', component: item_detail_component_1.ItemDetailComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

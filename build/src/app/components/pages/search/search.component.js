@@ -7,26 +7,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-let HeaderComponent = class HeaderComponent {
-    constructor(_servicio, router) {
-        this._servicio = _servicio;
-        this.router = router;
+let SearchComponent = class SearchComponent {
+    constructor(route, productoService) {
+        this.route = route;
+        this.productoService = productoService;
     }
     ngOnInit() {
-    }
-    buscarProducto(termino) {
-        if (termino.length < 1) {
-            return;
-        }
-        this.router.navigate(['/search', termino]);
-        // console.log(termino);
+        this.route.params.subscribe(params => {
+            console.log(params['termino']);
+            this.productoService.buscarProducto(params['termino']);
+        });
     }
 };
-HeaderComponent = __decorate([
+SearchComponent = __decorate([
     core_1.Component({
-        selector: 'app-header',
-        templateUrl: './header.component.html',
-        styleUrls: ['./header.component.css']
+        selector: 'app-search',
+        templateUrl: './search.component.html',
+        styleUrls: ['./search.component.css']
     })
-], HeaderComponent);
-exports.HeaderComponent = HeaderComponent;
+], SearchComponent);
+exports.SearchComponent = SearchComponent;
