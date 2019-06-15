@@ -8,7 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 let ItemsComponent = class ItemsComponent {
-    constructor() { }
+    constructor(productosService) {
+        this.productosService = productosService;
+    }
     ngOnInit() {
     }
 };

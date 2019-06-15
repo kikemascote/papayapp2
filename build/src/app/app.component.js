@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 let AppComponent = class AppComponent {
-    constructor(_pageInfoService) {
+    constructor(_pageInfoService, productosService) {
         this._pageInfoService = _pageInfoService;
+        this.productosService = productosService;
         this.title = 'papaya';
     }
 };

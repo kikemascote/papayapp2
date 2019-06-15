@@ -28,7 +28,7 @@ let PageInfoService = class PageInfoService {
         this.http.get('https://papaya-db.firebaseio.com/equipo.json')
             .subscribe((resp) => {
             this.equipo = resp;
-            console.log(resp);
+            // console.log(resp);
         });
     }
 };
