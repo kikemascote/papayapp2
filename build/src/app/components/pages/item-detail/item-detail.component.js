@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
+// import { Producto } from '../../../interfaces/producto.interface';
 let ItemDetailComponent = class ItemDetailComponent {
     constructor(route, productoService) {
         this.route = route;
