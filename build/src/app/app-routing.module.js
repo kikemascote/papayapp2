@@ -14,7 +14,7 @@ const item_detail_component_1 = require("./components/pages/item-detail/item-det
 const routes = [
     { path: 'home', component: items_component_1.ItemsComponent },
     { path: 'about', component: about_component_1.AboutComponent },
-    { path: 'item-detail', component: item_detail_component_1.ItemDetailComponent },
+    { path: 'item-detail/:id', component: item_detail_component_1.ItemDetailComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 let AppRoutingModule = class AppRoutingModule {

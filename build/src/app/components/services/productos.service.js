@@ -23,6 +23,9 @@ let ProductosService = class ProductosService {
             // setTimeout
         });
     }
+    getProducto(id) {
+        return this.http.get(`https://papaya-db.firebaseio.com/productos/${id}.json`);
+    }
 };
 ProductosService = __decorate([
     core_1.Injectable({

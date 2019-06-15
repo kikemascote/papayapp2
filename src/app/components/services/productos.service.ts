@@ -26,4 +26,10 @@ export class ProductosService {
 
         });
   }
+
+  getProducto(id: string) {
+
+    return this.http.get(`https://papaya-db.firebaseio.com/productos/${ id }.json`);
+
+  }
 }

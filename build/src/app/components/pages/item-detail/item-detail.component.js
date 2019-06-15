@@ -8,8 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 let ItemDetailComponent = class ItemDetailComponent {
-    constructor() { }
+    constructor(route, productoService) {
+        this.route = route;
+        this.productoService = productoService;
+    }
     ngOnInit() {
+        this.route.params
+            .subscribe(parametros => {
+            // console.log(parametros['id']);
+            this.productoService.getProducto(parametros['id'])
+                .subscribe((producto) => {
+                this.pid = parametros['id'];
+                console.log(producto);
+                this.producto = producto;
+            });
+        });
     }
 };
 ItemDetailComponent = __decorate([
