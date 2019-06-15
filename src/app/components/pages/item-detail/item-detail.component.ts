@@ -10,8 +10,8 @@ import { ProductosService } from '../../services/productos.service';
 })
 export class ItemDetailComponent implements OnInit {
 
-  producto: ProductoDescripcion;
-  pid: string;
+  producto: ProductoDescripcion | undefined;
+  pid: string | undefined;
 
   constructor( private route: ActivatedRoute, public productoService: ProductosService) { }
 
@@ -21,7 +21,7 @@ export class ItemDetailComponent implements OnInit {
         .subscribe( parametros => {
            // console.log(parametros['id']);
           this.productoService.getProducto(parametros['id'])
-              .subscribe( (producto: ProductoDescripcion) => {
+              .subscribe( (producto: any) => {
                 this.pid = parametros['id'];
                 // console.log(producto);
                 this.producto = producto;

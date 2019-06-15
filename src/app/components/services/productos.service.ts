@@ -21,7 +21,7 @@ export class ProductosService {
     return new Promise( ( resolve, reject ) => {
 
       this.http.get('https://papaya-db.firebaseio.com/productos_idx.json')
-          .subscribe( (resp: Producto[]) => {
+          .subscribe( (resp: any) => {
             // console.log(resp);
             this.productos = resp;
             this.cargando = false;

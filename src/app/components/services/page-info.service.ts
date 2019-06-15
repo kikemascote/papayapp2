@@ -27,7 +27,7 @@ export class PageInfoService {
 
    private cargarEquipo() {
     this.http.get('https://papaya-db.firebaseio.com/equipo.json')
-    .subscribe( (resp: any[]) => {
+    .subscribe( (resp: any) => {
       this.equipo = resp;
       // console.log(resp);
     });
